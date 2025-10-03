@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+:root{
+    /* beige theme */
+    --bg:#ffffff; /* page white background */
+    --panel:#f0e9dc; /* card beige */
+    --panel-dark:#e9dfc8; /* inner panel */
+    --muted:#6b5a47; /* muted brown text */
+    --accent:#c9a86b; /* warm accent - beige/gold */
+    --accent-strong:#b89258;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
+    background:var(--bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+}
+
+.page{width:100%;max-width:920px;padding:18px}
+.card{
+    background:linear-gradient(180deg, var(--panel), var(--panel-dark));
+    border-radius:14px;
+    padding:28px 28px 28px 20px;
+    box-shadow:0 6px 20px rgba(107,90,71,0.12), inset 0 1px 0 rgba(255,255,255,0.5);
+    border:1px solid rgba(0,0,0,0.04);
+    position:relative;
+}
+
+/* left accent bar */
+.card::before{
+    content:'';
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:8px;
+    border-radius:14px 0 0 14px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-strong));
+}
+
+.card-title{
+    text-align:center;margin:0 0 18px 0;
+    color:var(--muted);
+    font-size:36px;font-weight:700;letter-spacing:0.5px;
+}
+
+.card-subtitle{margin:6px 0 18px 0;text-align:center;color:rgba(107,90,71,0.85);font-size:14px}
+
+.add-form{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+/* Make inputs consistent height so buttons can match */
+.input{background:transparent;border:1px solid rgba(107,90,71,0.08);padding:12px 14px;border-radius:8px;color:var(--muted);outline:none;height:48px}
+.task-input{flex:1;font-size:16px;line-height:24px}
+.date-input{width:200px;height:48px}
+
+.btn{border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700;transition:all .18s ease}
+.add-btn{background:var(--accent);color:#fff;font-size:20px;width:48px;height:48px;border-radius:8px;display:inline-grid;place-items:center;padding:0;box-shadow:0 4px 10px rgba(200,168,107,0.12)}
+.filter-btn{background:var(--accent-strong);color:#fff;border:1px solid var(--accent-strong)}
+.filter-btn.active{background:var(--accent-strong);color:#fff;opacity:0.95}
+.delete-all-btn{background:var(--accent-strong);color:#fff;border:1px solid var(--accent-strong)}
+
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,0.06)}
+
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+
+.table-wrap{background:transparent;padding:6px;border-radius:8px}
+.task-table{width:100%;border-collapse:collapse;color:var(--muted);font-size:14px}
+.task-table thead th{padding:18px 12px;text-align:left;color:#3b3222;font-size:13px}
+.task-table tbody td{padding:16px 12px;background:transparent}
+.task-table tbody tr td{vertical-align:middle}
+.task-table tbody tr td .action-btn{margin-left:8px}
+
+/* Beige table surface */
+.task-table thead,
+.task-table tbody{
+    background: linear-gradient(180deg, #f3ead7, #e9dfc8); /* beige tones */
+    border-radius:6px;
+}
+.task-table thead th{background:transparent}
+.task-table tbody td{color:#3b3222}
+.task-table tbody tr:nth-child(odd){background:rgba(0,0,0,0.02)}
+.empty-row td{color:#3b3222}
+
+.empty-row td{text-align:center;color:var(--muted);padding:28px 12px}
+
+.status-toggle{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:var(--muted);font-weight:600}
+
+.task-name{font-weight:600;color:var(--muted)}
+
+@media (max-width:640px){
+    .add-form{flex-direction:column;align-items:stretch}
+    .date-input{width:100%}
+    .controls{flex-direction:column;align-items:stretch}
+    .add-btn{width:100%;height:48px;border-radius:8px}
+}
