@@ -6,11 +6,43 @@
     <title>to-do-app</title>
 
      <!-- css -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-</body>
-</html>
+    <link rel="stylesheet" href="css/style.css">
+        </head>
+        <body>
+            <main class="page">
+                <section class="card">
+                    <h1 class="card-title">To Do App</h1>
+                    <p class="card-subtitle">Plan your day — small steps, big wins</p>
+
+                    <form id="addForm" class="add-form" autocomplete="off">
+                        <input id="textInput" class="input task-input" type="text" placeholder="Add a todo . . ." />
+                        <input id="dateInput" class="input date-input" type="date" />
+                        <button id="addBtn" class="btn add-btn" type="submit">ADD</button>
+                    </form>
+
+                    <div class="controls">
+                        <button id="filterBtn" class="btn filter-btn">FILTER</button>
+                        <button id="deleteAllBtn" class="btn delete-all-btn">DELETE</button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table class="task-table">
+                            <thead>
+                                <tr>
+                                    <th>TASK</th>
+                                    <th>DUE DATE</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="taskBody">
+                                <tr class="empty-row"><td colspan="4">No task found</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+
+            <script src="js/script.js"></script>
+        </body>
+    </html>
